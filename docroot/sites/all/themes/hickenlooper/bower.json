@@ -1,0 +1,18 @@
+{
+  "name": "hickenlooper",
+  "version": "0.0.0",
+  "authors": [
+    "Tedd Arcuri <tedd.arcuri@www.colorado.gov>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "react": "~0.13.3"
+  }
+}
