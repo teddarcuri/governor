@@ -1,3 +1,7 @@
+<?php
+    include $GLOBALS['theme_path'] . "/templates/includes/header.inc";
+?>
+
 <!--.page -->
 <div role="document" class="page">
   <header id="hero" role="banner">
