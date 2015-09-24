@@ -1,18 +1,3 @@
-/*
- * @file
- * This file is a custom file that loads all files. Each non-base layer
- * can be disabled.
- *
- * Do not name this file "STARTER.scss". This file should be named
- * hickenlooper.scss. If you used the drush command to generate this subtheme,
- * it should be named for you.
- *
- * This application file (hickenlooper.scss) is where all the partials are
- * imported.
- *
- * If you have changed the paths where bower components live, please update the mappings below.
- */
-
 // Make sure the charset is set appropriately
 @charset "UTF-8";
 
@@ -26,7 +11,9 @@
 @import "../../neato/bower_components/neat/app/assets/stylesheets/neat";
 @import "../../neato/bower_components/neat/app/assets/stylesheets/neat-helpers";
 
-// Import layout
+// Configuration | Variables, settings, etc.
+
+// Layout Elements
 @import "base/layout";
 
 // Import Drupal element overrides
@@ -35,7 +22,7 @@
 @import "common/tables";
 @import "common/tasks";
 
-// Import your components here.
+// Components
 @import "components/hero";
 @import "components/flexbox";
 @import "components/footer";
