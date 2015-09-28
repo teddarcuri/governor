@@ -7,6 +7,8 @@ var notify = require('gulp-notify');
 var browserSync = require('browser-sync');
 var sourcemaps = require('gulp-sourcemaps');
 var uglify = require('gulp-uglify');
+var concat = require('gulp-concat');
+var react = require('gulp-react');
 
 gulp.task('sass', function () {
   return gulp.src('./scss/**/*.scss')
@@ -27,12 +29,19 @@ gulp.task('sass', function () {
     }));
 });
 
+gulp.task('react', function () {
+    return gulp.src('js/components/**.jsx')
+        .pipe(react())
+        .pipe(gulp.dest('js/js-src'));
+});
+
 gulp.task('compress', function() {
-  return gulp.src('./js-src/*.js')
+  return gulp.src('js/js-src/*.js')
     .pipe(sourcemaps.init())
     .pipe(uglify())
+    .pipe(concat('scripts.js'))
     .pipe(sourcemaps.write('./maps'))
-    .pipe(gulp.dest('./js'))
+    .pipe(gulp.dest('js'))
     .pipe(notify({
       title: "JS Minified",
       message: "All JS files in the theme have been minified.",
@@ -58,10 +67,11 @@ gulp.task('watch', function() {
   });
 
   // watch scss, js, and tpl files and clear drupal theme cache on change, reload browsers
-  gulp.watch(['scss/**/*.scss', 'js-src/**/*.js', 'templates/**/*.tpl.php'], function() {
+  gulp.watch(['scss/**/*.scss', 'js/**/*.js', 'js/**/*.jsx', 'templates/**/*.tpl.php'], function() {
     gulp.run('sass');
+    gulp.run('react');
     gulp.run('compress');
-    gulp.run('drush:cc');
+    //gulp.run('drush:cc');
   }).on("change", browserSync.reload);
 });
 
