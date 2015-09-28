@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Block Accordion feature.
+ */
+
+include_once 'block_accordion.features.inc';
