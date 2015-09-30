@@ -108,6 +108,9 @@ function ci_panopoly_config_features_override_default_overrides() {
   $overrides["node.panel.help"] = '';
   $overrides["node.panel.title_label"] = 'Title';
 
+  // Exported overrides for: variable
+  $overrides["variable.field_bundle_settings_node__panopoly_page.value|extra_fields|form|path|weight"] = 6;
+
   // Exported overrides for: views_view
   $overrides["views_view.admin_views_file.display|default|display_options|fields|views_bulk_operations|vbo_operations|action::panelizer_set_status_action"]["DELETED"] = TRUE;
   $overrides["views_view.admin_views_file.display|default|display_options|fields|views_bulk_operations|vbo_operations|action::system_send_email_action"]["DELETED"] = TRUE;

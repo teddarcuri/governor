@@ -1,0 +1,218 @@
+<?php
+
+/**
+ * @file Secure Permissions Data
+ * Module file for secure permissions in code.
+ */
+
+/**
+ * Define site roles in code.
+ *
+ * Create a secure_permissions_data module directory and place this function
+ * in secure_permissions_data.module.
+ *
+ * @return
+ *   An array defining all the roles for the site.
+ */
+function secure_permissions_data_secure_permissions_roles() {
+  return array(
+    'anonymous user',
+    'authenticated user',
+    'editor',
+  );
+}
+
+/**
+ * Define site permissions in code.
+ *
+ * Create a secure_permissions_data module directory and place this function
+ * in secure_permissions_data.module.
+ *
+ * @param $role
+ *   The role for which the permissions are being requested.
+ *
+ * @return
+ *   An array defining all the permissions for the site.
+ */
+function secure_permissions_data_secure_permissions($role) {
+  $permissions = array(
+    'anonymous user' => array(
+      'access content',
+      'search content',
+      'use manualcrop',
+      'view files',
+      'view own files',
+    ),
+    'authenticated user' => array(
+      'access content',
+      'access media browser',
+      'access navbar',
+      'administer url aliases',
+      'change layouts in place editing',
+      'create any fancy_list bean',
+      'create fieldable image',
+      'create fieldable map',
+      'create fieldable spotlight',
+      'create fieldable table',
+      'create fieldable text',
+      'create fieldable video',
+      'create flag content',
+      'create mini panels',
+      'create panel-nodes',
+      'create panopoly_landing_page content',
+      'create panopoly_news_article content',
+      'create url aliases',
+      'delete any audio files',
+      'delete any document files',
+      'delete any fancy_list bean',
+      'delete any image files',
+      'delete any video files',
+      'delete fieldable image',
+      'delete fieldable map',
+      'delete fieldable spotlight',
+      'delete fieldable table',
+      'delete fieldable text',
+      'delete fieldable video',
+      'delete own audio files',
+      'delete own document files',
+      'delete own image files',
+      'delete own video files',
+      'download any audio files',
+      'download any document files',
+      'download any image files',
+      'download any video files',
+      'download own audio files',
+      'download own document files',
+      'download own image files',
+      'download own video files',
+      'edit any audio files',
+      'edit any document files',
+      'edit any fancy_list bean',
+      'edit any image files',
+      'edit any video files',
+      'edit fieldable image',
+      'edit fieldable map',
+      'edit fieldable spotlight',
+      'edit fieldable table',
+      'edit fieldable text',
+      'edit fieldable video',
+      'edit own audio files',
+      'edit own document files',
+      'edit own image files',
+      'edit own video files',
+      'schedule (un)publishing of nodes',
+      'search content',
+      'use ipe with page manager',
+      'use manualcrop',
+      'use panels in place editing',
+      'use text format panopoly_wysiwyg_text',
+      'view any fancy_list bean',
+      'view bean revisions',
+      'view files',
+      'view own files',
+      'view scheduled content',
+    ),
+    'editor' => array(
+      'access administration pages',
+      'access content overview',
+      'access navbar',
+      'add media from remote sources',
+      'administer menu',
+      'administer panelizer node panopoly_landing_page breadcrumbs',
+      'administer panelizer node panopoly_landing_page content',
+      'administer panelizer node panopoly_landing_page context',
+      'administer panelizer node panopoly_landing_page defaults',
+      'administer panelizer node panopoly_landing_page layout',
+      'administer panelizer node panopoly_landing_page overview',
+      'administer panelizer node panopoly_landing_page settings',
+      'administer panelizer node panopoly_page breadcrumbs',
+      'administer panelizer node panopoly_page content',
+      'administer panelizer node panopoly_page context',
+      'administer panelizer node panopoly_page defaults',
+      'administer panelizer node panopoly_page layout',
+      'administer panelizer node panopoly_page overview',
+      'administer panelizer node panopoly_page settings',
+      'administer panelizer taxonomy_term panopoly_categories breadcrumbs',
+      'administer panelizer taxonomy_term panopoly_categories content',
+      'administer panelizer taxonomy_term panopoly_categories context',
+      'administer panelizer taxonomy_term panopoly_categories defaults',
+      'administer panelizer taxonomy_term panopoly_categories layout',
+      'administer panelizer taxonomy_term panopoly_categories overview',
+      'administer panelizer taxonomy_term panopoly_categories settings',
+      'administer panelizer user user content',
+      'administer panelizer user user layout',
+      'administer panels styles',
+      'administer taxonomy',
+      'change layouts in place editing',
+      'create fieldable basic_file',
+      'create fieldable image',
+      'create fieldable map',
+      'create fieldable quick_links',
+      'create fieldable spotlight',
+      'create fieldable table',
+      'create fieldable text',
+      'create fieldable video',
+      'create panopoly_landing_page content',
+      'create panopoly_page content',
+      'delete any audio files',
+      'delete any document files',
+      'delete any image files',
+      'delete any panopoly_landing_page content',
+      'delete any panopoly_page content',
+      'delete any video files',
+      'delete fieldable basic_file',
+      'delete fieldable image',
+      'delete fieldable map',
+      'delete fieldable quick_links',
+      'delete fieldable spotlight',
+      'delete fieldable table',
+      'delete fieldable text',
+      'delete fieldable video',
+      'delete own audio files',
+      'delete own document files',
+      'delete own image files',
+      'delete own panopoly_landing_page content',
+      'delete own panopoly_page content',
+      'delete own video files',
+      'delete revisions',
+      'download any audio files',
+      'download any document files',
+      'download any image files',
+      'download any video files',
+      'download own audio files',
+      'download own document files',
+      'download own image files',
+      'download own video files',
+      'edit any audio files',
+      'edit any document files',
+      'edit any image files',
+      'edit any panopoly_landing_page content',
+      'edit any panopoly_page content',
+      'edit any video files',
+      'edit fieldable basic_file',
+      'edit fieldable image',
+      'edit fieldable map',
+      'edit fieldable quick_links',
+      'edit fieldable spotlight',
+      'edit fieldable table',
+      'edit fieldable text',
+      'edit fieldable video',
+      'edit own audio files',
+      'edit own document files',
+      'edit own image files',
+      'edit own panopoly_landing_page content',
+      'edit own panopoly_page content',
+      'edit own video files',
+      'revert revisions',
+      'use page manager',
+      'use panels in place editing',
+      'use text format panopoly_html_text',
+      'use text format panopoly_wysiwyg_text',
+      'view own unpublished content',
+      'view revisions',
+    ),
+  );
+  if (isset($permissions[$role])) {
+    return $permissions[$role];
+  }
+}

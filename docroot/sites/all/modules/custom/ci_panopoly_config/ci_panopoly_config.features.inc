@@ -251,6 +251,15 @@ function ci_panopoly_config_node_info_alter(&$data) {
 }
 
 /**
+ * Implements hook_strongarm_alter().
+ */
+function ci_panopoly_config_strongarm_alter(&$data) {
+  if (isset($data['field_bundle_settings_node__panopoly_page'])) {
+    $data['field_bundle_settings_node__panopoly_page']->value['extra_fields']['form']['path']['weight'] = 6; /* WAS: 5 */
+  }
+}
+
+/**
  * Implements hook_views_default_views_alter().
  */
 function ci_panopoly_config_views_default_views_alter(&$data) {
