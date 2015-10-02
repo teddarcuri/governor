@@ -9,10 +9,10 @@
  */
 function ci_panopoly_config_taxonomy_default_vocabularies() {
   return array(
-    'archive_option' => array(
-      'name' => 'Archive Option',
-      'machine_name' => 'archive_option',
-      'description' => '',
+    'goals' => array(
+      'name' => 'Goals',
+      'machine_name' => 'goals',
+      'description' => 'Specify the Goal type',
       'hierarchy' => 0,
       'module' => 'taxonomy',
       'weight' => 0,
