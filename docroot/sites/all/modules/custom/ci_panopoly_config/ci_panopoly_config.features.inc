@@ -8,6 +8,10 @@
  * Implements hook_field_default_field_instances_alter().
  */
 function ci_panopoly_config_field_default_field_instances_alter(&$data) {
+  if (isset($data['fieldable_panels_pane-image-field_basic_image_image'])) {
+    $data['fieldable_panels_pane-image-field_basic_image_image']['settings']['alt_field_required'] = 0; /* WAS: '' */
+    $data['fieldable_panels_pane-image-field_basic_image_image']['settings']['title_field_required'] = 0; /* WAS: '' */
+  }
   if (isset($data['node-panopoly_faq-field_featured_image'])) {
     $data['node-panopoly_faq-field_featured_image']['settings']['alt_field_required'] = 1; /* WAS: '' */
     $data['node-panopoly_faq-field_featured_image']['settings']['title_field_required'] = 0; /* WAS: '' */
@@ -43,6 +47,14 @@ function ci_panopoly_config_field_default_field_instances_alter(&$data) {
   }
   if (isset($data['node-panopoly_page-field_featured_status'])) {
     $data['node-panopoly_page-field_featured_status']['widget']['weight'] = 4; /* WAS: 3 */
+  }
+  if (isset($data['taxonomy_term-panopoly_categories-field_featured_image'])) {
+    $data['taxonomy_term-panopoly_categories-field_featured_image']['settings']['alt_field_required'] = 0; /* WAS: '' */
+    $data['taxonomy_term-panopoly_categories-field_featured_image']['settings']['title_field_required'] = 0; /* WAS: '' */
+  }
+  if (isset($data['user-user-field_user_picture'])) {
+    $data['user-user-field_user_picture']['settings']['alt_field_required'] = 0; /* WAS: '' */
+    $data['user-user-field_user_picture']['settings']['title_field_required'] = 0; /* WAS: '' */
   }
 }
 
@@ -156,6 +168,12 @@ function ci_panopoly_config_image_styles_alter(&$data) {
 
   if (!isset($data['apps_screenshot']['storage']) || $data['apps_screenshot']['storage'] == IMAGE_STORAGE_DEFAULT) {
     $data['apps_screenshot']['label'] = 'apps_screenshot';
+  }
+  }
+  if (isset($data['beanslide-960'])) {
+
+  if (!isset($data['beanslide-960']['storage']) || $data['beanslide-960']['storage'] == IMAGE_STORAGE_DEFAULT) {
+    $data['beanslide-960']['label'] = 'beanslide-960';
   }
   }
   if (isset($data['linkit_thumb'])) {
@@ -279,12 +297,7 @@ function ci_panopoly_config_default_page_manager_handlers_alter(&$data) {
     $data['node_edit_panel_context']->conf['display']->content['new-99f6c0bd-36fd-411b-9833-c0be0fab7548']->position = 3; /* WAS: 2 */
     $data['node_edit_panel_context']->conf['display']->content['new-c0926cca-059c-4bb1-bccd-2838ec7a93f2']->position = 7; /* WAS: 6 */
     $data['node_edit_panel_context']->conf['display']->content['new-e38ab3a3-24d0-4ac2-900e-4ddb0248be0c']->position = 4; /* WAS: 3 */
-    $data['node_edit_panel_context']->conf['display']->panels['sidebar'][2] = 'new-2967a3b9-2ff8-419b-8a5e-bbb839060d70'; /* WAS: 'new-99f6c0bd-36fd-411b-9833-c0be0fab7548' */
-    $data['node_edit_panel_context']->conf['display']->panels['sidebar'][3] = 'new-99f6c0bd-36fd-411b-9833-c0be0fab7548'; /* WAS: 'new-e38ab3a3-24d0-4ac2-900e-4ddb0248be0c' */
-    $data['node_edit_panel_context']->conf['display']->panels['sidebar'][4] = 'new-e38ab3a3-24d0-4ac2-900e-4ddb0248be0c'; /* WAS: 'new-9176b962-e64f-44a6-8ebe-e03ebf0f6c3d' */
-    $data['node_edit_panel_context']->conf['display']->panels['sidebar'][5] = 'new-9176b962-e64f-44a6-8ebe-e03ebf0f6c3d'; /* WAS: 'new-6e4a98d8-3738-41b9-8c33-4b4c905c6834' */
-    $data['node_edit_panel_context']->conf['display']->panels['sidebar'][6] = 'new-6e4a98d8-3738-41b9-8c33-4b4c905c6834'; /* WAS: 'new-c0926cca-059c-4bb1-bccd-2838ec7a93f2' */
-    $data['node_edit_panel_context']->conf['display']->panels['sidebar'][7] = 'new-c0926cca-059c-4bb1-bccd-2838ec7a93f2'; /* WAS: '' */
+    $data['node_edit_panel_context']->conf['display']->panels['sidebar'][7] = 'new-2967a3b9-2ff8-419b-8a5e-bbb839060d70'; /* WAS: '' */
   }
 }
 
