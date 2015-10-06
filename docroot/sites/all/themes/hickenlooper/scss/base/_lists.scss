@@ -29,3 +29,15 @@ dl {
     margin: 0;
   }
 }
+
+// Styled
+ul {
+    &.list {
+        padding: 10px;
+        list-style: disc;
+        li {
+            margin-left: 30px;
+            line-height: 2em;
+        }
+    }
+}

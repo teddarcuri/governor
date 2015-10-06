@@ -1,6 +1,9 @@
 // Make sure the charset is set appropriately
 @charset "UTF-8";
 
+// Normalize Reset
+@import "../bower_components/normalize.css/normalize.css";
+
 // Import Bourbon.
 @import "../../neato/bower_components/bourbon/app/assets/stylesheets/bourbon";
 
@@ -11,7 +14,21 @@
 @import "../../neato/bower_components/neat/app/assets/stylesheets/neat";
 @import "../../neato/bower_components/neat/app/assets/stylesheets/neat-helpers";
 
-// Configuration | Variables, settings, etc.
+
+// Dyslexic Font
+@font-face {
+    font-family: open-dyslexic;
+    src: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/166133/OpenDyslexic3-Regular.ttf');
+}
+
+// Font Awesome
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css');
+
+// Libraries
+@import "../bower_components/flickity/dist/flickity.css";
+@import "../bower_components/slick-carousel/slick/slick.css";
+@import "../bower_components/slick-carousel/slick/slick-theme.css";
+@import "../bower_components/jquery-gi-thewall/assets/css/GITheWall.css";
 
 // Layout Elements
 @import "base/layout";
@@ -23,6 +40,10 @@
 @import "common/tasks";
 
 // Components
-@import "components/hero";
-@import "components/flexbox";
+@import "components/header";
+@import "components/slideshow";
+@import "components/goals";
+@import "components/main-content";
+@import "components/news-tile";
+@import "components/screen-dim";
 @import "components/footer";

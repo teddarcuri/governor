@@ -1,5 +1,5 @@
 // Typography
-$base-font-family: $helvetica;
+$base-font-family: 'Museo Sans';
 $heading-font-family: $base-font-family;
 
 // Font Sizes
@@ -15,11 +15,27 @@ $base-spacing: $base-line-height * 1em;
 $small-spacing: $base-spacing / 2;
 $base-z-index: 0;
 
+// Layout Variables
+$wrapper-size: 1250px;
+$header-height: 80px;
+$contentPadding: 25px;
+$gutter: modular-scale(0, 0em, $golden) !default;
+
+// Z Index
+$z-nav: 9999;
+$z-body: 5000;
+
 // Colors
-$blue: #477dca;
+$blue: #1F6190;
+$darkBlue: darken(#1F6190, 10%);
+$lightBlue: #3683BA;
+$red: #BA394C;
+$yellow: #FFAD27;
 $dark-gray: #333;
 $medium-gray: #999;
 $light-gray: #ddd;
+
+$shadow: 0px 0px 7px -1px rgba(black, 0.2);
 
 // Font Colors
 $base-background-color: #fff;

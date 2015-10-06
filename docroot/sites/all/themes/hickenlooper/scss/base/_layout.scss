@@ -2,6 +2,10 @@ body {
   margin: 0;
   padding: 0;
 
+  .page {
+      padding-top: $header-height + 20;
+  }
+
   main {
     @include outer-container;
     padding: 3em 0;
