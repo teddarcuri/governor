@@ -13,6 +13,11 @@
     "tests"
   ],
   "devDependencies": {
-    "react": "~0.13.3"
+    "react": "~0.13.3",
+    "jQuery": "~2.1.4",
+    "flickity": "~1.1.1",
+    "velocity": "~1.2.3",
+    "slick-carousel": "~1.5.8",
+    "jquery-gi-thewall": "~1.0.2"
   }
 }
