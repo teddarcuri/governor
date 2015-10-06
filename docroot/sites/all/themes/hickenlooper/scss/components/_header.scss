@@ -1,0 +1,461 @@
+* {
+  box-sizing: border-box;
+  font-family: 'Museo Sans';
+}
+
+body {
+    //background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/166133/Black-Canyon-3.jpg") no-repeat center center fixed;
+    //background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/166133/red-sunset.jpg") no-repeat center center fixed;
+    //background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/166133/aspen.jpg") no-repeat center center fixed;
+    //background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/166133/co-meadow-forest.jpg") no-repeat center center fixed;
+    background-size: cover;
+    font-size: 1em;
+    &.logged-in {
+        .drupal-navbar {
+            z-index: $z-nav + 200;
+        }
+        #header-render {
+            top: 39px;
+        }
+    }
+}
+
+main {
+    position: relative;
+    z-index: $z-body;
+    .container {
+        padding: 25px;
+    }
+}
+
+.flex {
+    @include display(flex);
+    @include justify-content(space-between);
+    @include align-items(center);
+}
+
+.flex-center {
+     @include display(flex);
+     @include justify-content(center);
+     @include align-items(center);
+}
+
+.flex-space-between {
+    @include display(flex);
+    @include justify-content(space-between);
+    @include align-items(center);
+}
+
+.container {
+    width: 100%; max-width: $wrapper-size;
+    height: 100%;
+    margin: 0px auto;
+    position: relative;
+    padding: 0px;
+    &.flex {
+        @include display(flex);
+        @include justify-content(space-between);
+        @include align-items(center);
+    }
+}
+
+
+// Layout
+#header-render {
+    position: fixed;
+    top: 0px; left: 0px;
+    width: 100%;
+    z-index: $z-nav;
+    //background: #fff;
+    @include transition(all ease 0.5s);
+    .container {
+        //max-width: none;
+        @include transition(all ease 0.5s);
+    }
+    &.small {
+        header {
+            height: $header-height - 20;
+            #main-logo {
+                padding: 12px 20px;
+            }
+        }
+        .container {
+            max-width: none;
+        }
+    }
+}
+
+header#main {
+    background: #fff;
+    width: 100%; height: $header-height;
+    position: relative;
+    z-index: $z-nav;
+    @include transition(all ease 0.5s);
+    @include display(flex);
+    @include justify-content(space-between);
+    @include align-items(center);
+
+    #logo-container {
+        height: 100%;
+        width: auto;
+    }
+
+    #main-logo {
+        padding: 17px 20px;
+        height: 100%;
+        width: auto;
+        background: #fff;
+    }
+
+    .tools {
+        background: #fff;
+        height: 100%;
+        @include display(flex);
+        @include justify-content(flex-end);
+        @include flex-wrap(wrap);
+        @include flex(1 0 auto);
+        a {
+            $border: solid 1px #eee;
+            height: 100%;
+            border-right: $border;
+            padding: 0px 1.5em;
+            color: #777;
+            cursor: pointer;
+            @include display(flex);
+            @include justify-content(center);
+            @include align-items(center);
+            &:first-child {
+               border-left: $border;
+            }
+            &:last-child {
+               border: none;
+            }
+            &:hover {
+                @include linear-gradient(to top, whitesmoke, #fff);
+                box-shadow: inset 0px 0px 7px rgba(#000, 0.2);
+                i {
+                    color: $blue;
+                }
+            }
+            i {
+                color: #777;
+                font-size: 1.2em;
+            }
+            .query {
+                 margin-left: 10px;
+            }
+        }
+    }
+}
+
+ // Search
+.search {
+    background: #fff;
+    position: relative;
+    cursor: pointer;
+    @include transition(all ease 1s);
+    &.expanded {
+        @include justify-content(space-between);
+        @include flex(2 0 100%);
+        input {
+            z-index: $z-nav;
+            height: 100%;
+            width: 100%;
+            padding: 0px 60px;
+            font-size: 2em;
+            background: #fff;
+            position: absolute;
+            top: 0; left: 0;
+            box-shadow: none;
+            border: none;
+        }
+        i {
+            z-index: $z-nav + 1;
+            &.close-search {
+                margin: 0px;
+                position: absolute;
+                padding: 10px;
+                color: $red !important;
+                font-size: 1em !important;
+                cursor: pointer;
+                top: 10px; right: 10px;
+                &:hover {
+                    background: whitesmoke !important;
+                }
+            }
+            &.fa-search {
+                position: absolute;
+                left: 25px;
+                height: 100%;
+                font-size: 1.5em !important;
+                line-height: $header-height;
+            }
+        }
+        .drawer {
+          @include transform(translateY(0px));
+        }
+    } // End Expanded Search
+    .drawer {
+        background: $blue;
+        color: #fff;
+        font-weight: 700;
+        width: 100%; height: auto;
+        max-height: 80vh;
+        padding: 40px 30px;
+        position: absolute;
+        left: 0px; top: $header-height;
+        box-shadow: $shadow;
+        overflow: auto;
+        @include transform(translateY(-100%));
+        @include transition(all ease 0.5s);
+        div {
+            padding: 20px;
+            margin-bottom: 10px;
+            @include span-columns(12);
+            border-bottom: solid 1px #ddd;
+            h3 {
+                margin: 0px 20px;
+            }
+        }
+
+        img {
+            @include span-columns(3);
+        }
+    }
+} // End Search
+
+@mixin drawer($bgColor) {
+    background: $bgColor;
+    padding: 10px 30px;
+    width: 100%;
+    color: #fff;
+    position: absolute;
+    z-index: $z-nav - 2;
+    box-shadow: $shadow;
+    @include display(flex);
+    @include flex-wrap(wrap);
+    @include transition(all ease 0.75s);
+    @include transform(translateY(-100%));
+    &.active {
+      @include transform(translateY(0));
+    }
+    a {
+        color: #fff;
+        text-decoration: none;
+    }
+    h2 {
+        margin: 20px 0px;
+        i {
+            margin-right: 20px;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+//Flag Status
+.flag-status {
+    @include align-items(stretch);
+    @include justify-content(flex-start);
+    //@include flex-direction(column);
+    div {
+        vertical-align: middle;
+        line-height: $header-height / 2;
+        padding: 0px 10px;
+        color: #666;
+    }
+    .flag-icon {
+        vertical-align: middle;
+        margin-right: 10px;
+        width: 30px; height: auto;
+    }
+}
+
+.flag-status-drawer {
+    @include drawer($blue);
+    .flag-icon {
+        vertical-align: middle;
+        margin-right: 10px;
+        width: 30px; height: auto;
+    }
+    div {
+        @include flex(1 0 auto);
+        @include display(flex);
+        @include justify-content(flex-end);
+        @include align-items(center);
+    }
+}
+
+// Settings
+.settings-btn {
+    &.active {
+        @include linear-gradient(to top, #fff, whitesmoke);
+        i {
+            color: $blue !important;
+        }
+    }
+}
+
+.settings-drawer {
+    @include drawer(rgba(255, 255, 255, 0.9));
+    padding: 0px;
+    color: #555;
+    header {
+        padding: 0px 40px;
+        color: #fff;
+        background: $blue;
+        @include flex(1 0 100%);
+        h2 {
+           padding: 0px;
+        }
+    }
+    div {
+        display: block;
+        padding: 40px 30px;
+        border-bottom: solid 1px #ddd;
+        @include flex(1 0 100%);
+    }
+    span {
+        margin-left: 15px;
+        &:first-child {
+            margin: 0px;
+        }
+    }
+    .btn {
+        background: $lightBlue;
+    }
+}
+
+//End Flag Status
+#main-nav {
+    padding: 0px;
+    width: 100%;
+    max-height: calc(100vh - 100px);
+    max-width: $wrapper-size;
+    overflow: auto;
+    background: rgba($blue, 1);
+    position: absolute;
+    right: 0px;
+    z-index: $z-nav - 1;
+    box-shadow: $shadow;
+    //border-bottom: solid 25px #fff;
+    @include transition(all ease 0.75s);
+    @include transform(translateY(-100%));
+    &.active {
+      @include transform(translateY(0));
+    }
+    aside {
+        background: rgba(whitesmoke, 1);
+        color: $lightBlue;
+        padding: 20px;
+        height: 100%;
+        position: relative;
+        @include span-columns(5 of 12);
+        // @include omega();
+        header {
+            background: whitesmoke;
+            h3 {
+                color: $blue;
+                margin: 0px;
+                padding: 20px;
+            }
+        }
+        div {
+            img {
+                margin: 0 auto;
+                width: 100%;
+                max-width: 475px;
+                padding: 20px 20px 0px;
+            }
+        }
+    }
+    section {
+        height: 100%;
+        position: relative;
+        padding: 40px;
+        overflow: auto;
+        @include span-columns(7 of 12);
+
+        header {
+            color: $blue;
+            padding: 20px 0px;
+        }
+    }
+}
+
+.main-nav-btn {
+    cursor: pointer;
+    &.active {
+        background: $blue !important;
+        color: #fff !important;
+        i {
+            color: #fff !important;
+        }
+    }
+}
+
+////////////////////////
+// Accordions
+////////////////////////
+ul.clean-accordion {
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+    a {
+        text-decoration: none;
+    }
+    li {
+        margin: 0px 0px 10px 0px;
+        .nav-item-title {
+            padding: 10px 15px;
+            font-weight: 500;
+            font-size: 1.2em;
+            color: #fff;
+            width: 100%;
+            display: block;
+            cursor: pointer;
+            &:hover {
+                background: darken($blue, 5%);
+                color: #fff;
+            }
+            i {
+                font-size: 0.7em;
+                margin-left: 20px;
+            }
+        }
+
+        ul {
+            display: none;
+            background: rgba(#000, 0.2);
+            list-style: none;
+            margin: 0px;
+            padding: 0px;
+            li {
+                color: #fff;
+                padding: 10px 20px;
+                &:hover {
+                    background: rgba(#000, 0.2);
+                }
+            }
+        }
+    }
+}
+
+// Social Icons
+.social-icons {
+    padding: 20px 0px;
+    &.light {
+        a {
+            color: #fff;
+        }
+    }
+    a {
+        font-size: 1.5em;
+        color: $blue;
+        padding: 10px 15px;
+        &:hover {
+            background: rgba(#000, 0.2);
+        }
+    }
+}
