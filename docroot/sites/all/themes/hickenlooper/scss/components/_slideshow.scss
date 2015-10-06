@@ -1,0 +1,150 @@
+.hero {
+    width: 100%;
+    height: 600px;
+    position: relative;
+    background-color: $blue;
+    overflow: hidden;
+}
+
+.slideshow-bg {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+
+}
+
+.slideshow {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    //background: url("/sites/all/themes/hickenlooper/images/sliders/canyon.jpg") no-repeat top center;
+    //background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/166133/Black-Canyon-3.jpg") no-repeat top center;
+    //background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/166133/red-sunset.jpg") no-repeat top center;
+    //background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/166133/aspen.jpg") no-repeat top center;
+    background-size: cover;
+    &:before {
+        content: " ";
+        width: 100%; height: 100%;
+        bottom: 0px; left: 0px;
+        position: absolute;
+        @include linear-gradient(bottom, rgba($darkBlue,1) 0%, rgba($darkBlue,0.7) 20%, rgba($darkBlue,0) 50%, $fallback: transparent);
+    }
+
+    .slide {
+        width: 100%;
+    }
+
+    .container {
+        padding-top: $header-height + 20;
+        //max-width: none !important;
+        @include justify-content(flex-end);
+        header {
+            position: absolute;
+            bottom: 0px;
+            left: 0px;
+            width: 100%;
+            z-index: 2;
+            padding: 40px 0px;
+            h2 {
+                color: #fff;
+                font-size: 7em;
+                line-height: 0.85em;
+                text-shadow: 3px 3px 3px rgba(0,0,0,0.3);
+                span {
+                    font-size: 0.7em;
+                    color: $yellow;
+                    display: block;
+                    width: 100%;
+                }
+                .welcome-msg {
+                    color: #fff;
+                    font-size: 0.3em;
+                    line-height: 0.8em;
+                    font-weight: 300;
+                }
+            }
+        }
+        section {
+            z-index: 1;
+            background: rgba(black, 0.5);
+            //position: absolute;
+            //bottom: 0; left: 0;
+            color: #fff;
+            font-size: 1.1em;
+            padding: $contentPadding * 2;
+            max-width: $wrapper-size;
+            max-height: 450px;
+            overflow: auto;
+            margin: 0 auto;
+            h2 {
+                font-size: 2.5em;
+            }
+        }
+        aside {
+            z-index: 1;
+            @include transform(translateY(10px));
+            img {
+                max-height: 500px;
+            }
+        }
+    }
+}
+
+// Slick Carousel
+.slick-slide:focus {
+    outline: none;
+}
+
+// Dots
+.slick-dots {
+    background: rgba(black, 0.4);
+    width: auto;
+    display: inline-block;
+    position: absolute;
+    padding: 10px 20px 10px 0px;
+    right: 20px;
+    bottom: 0px;
+    border-radius: 8px 8px 0px 0px;
+    li {
+        @include transition(all ease 0.2s);
+        &.slick-active {
+            @include transform(translateY(-5px));
+            button {
+                &:before {
+                    opacity: 1;
+                    color: $yellow;
+                }
+            }
+        }
+        button {
+            &:before {
+                opacity: 1;
+                font-size: 13px;
+                color: #fff;
+                height: 40px; width: 40px;
+            }
+
+       }
+    }
+}
+
+//Next/Prev buttons
+.slick-prev {
+    left: 50px;
+    height: 50px;
+    width: 50px;
+    z-index: $z-nav - 1;
+    &:before {
+        font-size: 45px;
+    }
+}
+
+.slick-next {
+    right: 50px;
+    height: 50px;
+    width: 50px;
+    z-index: $z-nav - 1;
+    &:before {
+        font-size: 45px;
+    }
+}

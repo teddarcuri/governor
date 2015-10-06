@@ -1,0 +1,89 @@
+.goals {
+    width: 100%;
+    padding: 20px 0px;
+    background: $blue;
+    @include clearfix();
+
+    header {
+        h2 {
+            //text-align: center;
+            font-size: 3em;
+            margin-top: 10px;
+            color: darken($blue, 10%);
+        }
+    }
+
+    aside {
+        height: 260px;
+        color: #fff;
+        font-size: 3em;
+        text-align: center;
+        @include span-columns(2 of 10);
+        header {
+            font-size: 0.5em;
+        }
+    }
+
+    .goals-wall {
+        padding: 10px 0px;
+        ul {
+            li {
+                display: none;
+                text-align: center;
+                height: 200px;
+                padding: 30px;
+                border-radius: 10px;
+                cursor: pointer;
+                @include span-columns(2 of 10);
+                @include display(flex);
+                @include flex-wrap(wrap);
+
+                &.GI_TW_Current {
+                    background: rgba(black, 0.1);
+                }
+
+                img {
+                    width: 70px;
+                    max-height: 70px;
+                    @include flex(2 0 100%);
+                }
+
+                h4 {
+                    color: #fff;
+                    padding: 20px 0px;
+                    word-wrap: break-word;
+                    word-break: break-all;
+                    @include flex(2 0 100%);
+                }
+
+                &:hover {
+                    background: rgba(black, 0.2);
+                }
+            }
+        }
+    }
+}
+
+// The Wall Plugin
+
+.GI_TW_expander {
+    background: whitesmoke;
+    img {
+        width: 45px;
+    }
+    .fa {
+        padding: 10px;
+        color: $blue;
+        font-size: 1.3em;
+        &:hover {
+            background: #ddd;
+        }
+    }
+    .GI_TW_pointer {
+        margin-left: 0px;
+    }
+}
+
+.GI_TW_pointer {
+    border-bottom-color: whitesmoke !important;
+}
