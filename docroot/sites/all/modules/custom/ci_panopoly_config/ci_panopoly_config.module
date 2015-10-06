@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the CI Panopoly Config feature.
+ */
+
+include_once 'ci_panopoly_config.features.inc';

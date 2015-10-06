@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Archive Content feature.
+ */
+
+include_once 'archive_content.features.inc';

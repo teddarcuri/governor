@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Flag Status feature.
+ */
+
+include_once 'flag_status.features.inc';
