@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 18.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 218 217"
+	 enable-background="new 0 0 218 217" xml:space="preserve">
+<title>Rectangle 1 + Rectangle 1 Copy</title>
+<desc>Created with Sketch.</desc>
+<g>
+	<defs>
+		<rect id="SVGID_1_" x="77" y="-1" width="66" height="217"/>
+	</defs>
+	<clipPath id="SVGID_2_">
+		<use xlink:href="#SVGID_1_"  overflow="visible"/>
+	</clipPath>
+	<rect x="72" y="-6" clip-path="url(#SVGID_2_)" fill="#FFFFFF" width="76" height="227"/>
+</g>
+<g>
+	<defs>
+		<rect id="SVGID_3_" x="1.5" y="74.5" width="217" height="66"/>
+	</defs>
+	<clipPath id="SVGID_4_">
+		<use xlink:href="#SVGID_3_"  overflow="visible"/>
+	</clipPath>
+	<rect x="-3.5" y="69.5" clip-path="url(#SVGID_4_)" fill="#FFFFFF" width="227" height="76"/>
+</g>
+</svg>
