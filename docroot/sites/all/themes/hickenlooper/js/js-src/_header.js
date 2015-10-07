@@ -404,7 +404,7 @@
                 }
         },
         componentDidMount: function() {
-            $.get("/api/menu/main-menu", function(data){
+            $.get("/api/menu/main-menu.json", function(data){
                 this.setState({menuData: data});
             }.bind(this));
         },
@@ -464,7 +464,6 @@
             );
         }
     });
-
 
     var SocialIcons = React.createClass({displayName: "SocialIcons",
         render: function(){
